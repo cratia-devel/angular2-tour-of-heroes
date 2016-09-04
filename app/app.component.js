@@ -9,12 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Hero = (function () {
-    function Hero() {
-    }
-    return Hero;
-}());
-exports.Hero = Hero;
 var HEROES = [
     { id: 11, name: 'Mr. Nice' },
     { id: 12, name: 'Narco' },
@@ -38,7 +32,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    \t<h1>{{title}}</h1>\n\t<h2>Mis Heroes</h2>\n\t<ul>\n\t\t<li *ngFor=\"let hero of heroes\"\n\t       \t[class.selected]=\"hero === selectedHero\"\t\n    \t\t(click)=\"onSelect(hero)\">\n\t\t\t<span>{{hero.id}}</span> {{hero.name}}\n    \t\t</li>\n\t</ul>\n\t<div *ngIf=\"selectedHero\">\n\t\t<h2>{{selectedHero.name}} details!</h2>\n\t\t<div>\n\t\t\t<label>id: </label>{{selectedHero.id}}\n\t\t</div>\n\t\t<div>\n\t\t\t<label>name: </label>\n\t\t\t<input [(ngModel)]=\"selectedHero.name\" placeholder=\"name\">\n\t\t</div>\n\t</div>\n\t"
+            template: "\n    \t<h1>{{title}}</h1>\n\t<h2>Mis Heroes</h2>\n\t<ul>\n\t\t<li *ngFor=\"let hero of heroes\"\n    \t\t(click)=\"onSelect(hero)\">\n\t\t\t<span>{{hero.id}}</span> {{hero.name}}\n    \t\t</li>\n\t</ul>\n\t<my-hero-detail [hero]=\"selectedHero\"></my-hero-detail>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
